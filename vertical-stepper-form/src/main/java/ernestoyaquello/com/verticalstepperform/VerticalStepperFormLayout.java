@@ -56,11 +56,13 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
     protected boolean materialDesignInDisabledSteps;
     protected boolean hideKeyboard;
     protected boolean showVerticalLineWhenStepsAreCollapsed;
+    protected String nextStepButtonText;
 
     // Views
     protected LayoutInflater mInflater;
     protected LinearLayout content;
     protected ScrollView stepsScrollView;
+
     protected List<LinearLayout> stepLayouts;
     protected List<View> stepContentViews;
     protected List<TextView> stepsTitlesViews;
@@ -105,6 +107,14 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
         this.context = context;
         mInflater = LayoutInflater.from(context);
         mInflater.inflate(R.layout.vertical_stepper_form_layout, this, true);
+    }
+
+    public List<LinearLayout> getStepLayouts() {
+        return stepLayouts;
+    }
+
+    public AppCompatButton getNextStepButton(int stepNumber) {
+        return (AppCompatButton) stepLayouts.get(stepNumber).findViewById(R.id.next_step);
     }
 
     /**
