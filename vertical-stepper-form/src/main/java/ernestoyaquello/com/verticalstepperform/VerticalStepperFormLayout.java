@@ -687,7 +687,7 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
     }
 
     protected void openStep(int stepNumber, boolean restoration) {
-        if (stepNumber >= 0 && stepNumber <= numberOfSteps) {
+        if (stepNumber >= 0 && stepNumber < numberOfSteps) {
             activeStep = stepNumber;
 
             if (stepNumber == 0) {
