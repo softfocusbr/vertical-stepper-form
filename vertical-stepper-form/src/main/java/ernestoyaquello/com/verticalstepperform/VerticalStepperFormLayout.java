@@ -702,7 +702,7 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
                 disableNextButtonInBottomNavigationLayout();
             }
 
-            for(int i = 0; i <= numberOfSteps; i++) {
+            for(int i = 0; i < numberOfSteps; i++) {
                 if(i != stepNumber) {
                     disableStepLayout(i, !restoration);
                 } else {
