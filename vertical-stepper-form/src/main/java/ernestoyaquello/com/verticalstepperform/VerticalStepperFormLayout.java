@@ -248,7 +248,7 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
             disableStepHeader(stepLayout);
         }
 
-        if (stepNumber < numberOfSteps) {
+        if (showConfirmationStep && stepNumber < numberOfSteps) {
             setStepAsUncompleted(numberOfSteps, null);
         }
 
@@ -687,7 +687,7 @@ public class VerticalStepperFormLayout extends RelativeLayout implements View.On
     }
 
     protected void openStep(int stepNumber, boolean restoration) {
-        if (stepNumber >= 0 && stepNumber <= numberOfSteps) {
+        if (stepNumber >= 0 && stepNumber < numberOfSteps) {
             activeStep = stepNumber;
 
             if (stepNumber == 0) {
